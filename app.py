@@ -124,7 +124,7 @@ elif pagina == "Classifica":
         styled_df = (
             df_classifica
             .style
-            .applymap(color_positive, subset=col_domande)
+            .map(color_positive, subset=col_domande)
             .format({col: "{:.2f}" for col in col_numeriche})
         )
 
@@ -145,7 +145,7 @@ elif pagina == "Classifica":
 
                 if remaining > 0:
                     time.sleep(1)
-                    st.experimental_rerun()
+                    st.rerun()
             else:
                 st.info("Imposta un timer nella pagina Impostazioni.")
 
